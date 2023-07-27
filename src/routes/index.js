@@ -50,7 +50,7 @@ router.post('/registro', (req, res) => {
         })
 })
 
-router.post('/administradora', (req, res) => {
+router.post('/admin', (req, res) => {
     User.findOne({ email: req.body.email })
         .then((user) => {
             bcrypt
@@ -91,8 +91,8 @@ router.post('/administradora', (req, res) => {
         })
 })
 
-router.get("/administradora", auth, (req, res) => {
-    res.json({ message: "Authorizado"})
+router.get("/admin", auth, (req, res) => {
+    res.send("Necesitas Authorizacion")
 })
 
 router.post('/productonuevo', async (req, res) => {
