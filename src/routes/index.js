@@ -128,7 +128,8 @@ router.get('/product/:id/delete', async (req, res) => {
         const productDeleted = await Product.findByIdAndDelete(id);
         //averigar lo que hace esta linea de abajo
         //await unlink(path.resolve('./src/public' + productDeleted.path));
-        //res.redirect('/')
+        res.status(200).send("el producto fue borrado exitosamente")
+        res.redirect('/products')
     } catch (error) {
         res.status(500).send("error borrando producto")
     } 
