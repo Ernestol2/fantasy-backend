@@ -91,8 +91,8 @@ router.post('/admin', (req, res) => {
         })
 })
 
-router.get("/admin", auth, (req, res) => {
-    res.send("Necesitas Authorizacion")
+router.get("/admini", auth, (req, res) => {
+    res.send({ message: "Authorizado"})
 })
 
 router.post('/productonuevo', async (req, res) => {
