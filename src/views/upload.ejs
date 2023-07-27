@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOOTSTRAP  -->
+    <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <title>Subida de productos</title>
+</head>
+<body class="bg-dark">
+    <div class="container p-5">
+        <div class="row">
+            <div class="col-md4 offset-md-4">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Carga de Productos</h3>
+                    </div>
+                    <div class="card-body bg-dark">
+                        <form action="/upload" method="POST" enctype="multipart/form-data">
+                            <div class="input-group mb-3">
+                                <div class="custom-file">
+                                    <input type="file" name="image" class="custom-file-input" id="inputGroupFile02" required>
+                                    <label class="custom-file-label" for="inputGroupFile02">Elige una imagen</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="nombre" placeholder="Nombre del producto" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="precio" placeholder="Precio del producto" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="descripcion" class="form-control" placeholder="Descripcion del producto" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-success btn-block">Cargar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

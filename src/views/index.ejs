@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- BOOTSTRAP  -->
+    <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <title>Productos</title>
+    
+</head>
+
+<body>
+
+    <div class="container p-4">
+        <div class="row">
+            <div class="card-columns">
+
+                <% products.forEach(function (producto) { %>
+
+                <div class="card animated fadeInDown">
+                    <img src="<%= producto.path %>" class="card-img-top" alt="<%= producto.filename %>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= producto.nombre %></h5>
+                        <p class="card-text"><%= producto.descripcion %></p>
+                        <p class="card-text"><%= producto.precio %></p>
+                        <a href="/image/<%= producto._id %>" class="btn btn-primary">
+                           Detalles 
+                        </a>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
