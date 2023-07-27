@@ -112,9 +112,13 @@ router.post('/productonuevo', async (req, res) => {
 });
 
 router.get('/product/:id', async (req, res) => {
-    const { id } = req.params;
-    const product = await Product.findById(id);
-    res.json(product); 
+    try {
+        const { id } = req.params;
+        const product = await Product.findById(id);
+        res.json(product);
+    } catch (error) {
+        res.status(404).send("Producto no encontrado")
+    } 
 });
     
 
