@@ -11,7 +11,7 @@ const Product = require('../models/Product');
 const User = require('../models/User');
 
 //Routes
-router.get('/productos', async (req, res) => {
+router.get('/products', async (req, res) => {
    /*  const products = await Product.find();
     console.log(products);
     res.render("index", { products }) */
@@ -22,10 +22,6 @@ router.get('/productos', async (req, res) => {
         console.log(error);
         res.status(500).json({ error: "error obteniendo productos"})
     } 
-});
-
-router.get('/upload', (req, res) => {
-    res.render('upload');
 });
 
 
@@ -116,11 +112,11 @@ router.post('/productonuevo', async (req, res) => {
 });
 
 router.get('/product/:id', async (req, res) => {
-    res.send('productos individuales')
-   /*  const { id } = req.params;
+    const { id } = req.params;
     const product = await Product.findById(id);
-    res.render('profile', { product }); */
+    res.json(product); 
 });
+    
 
 router.get('/product/:id/delete', async (req, res) => {
     res.send('eliminar productos')

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "recordar hacer el cambio para este script"
+    "start": "node index.js"
   },
   "author": "chefernestolopez@gmail.com",
   "license": "ISC",
