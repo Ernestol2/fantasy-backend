@@ -106,7 +106,6 @@ router.post('/productonuevo', async (req, res) => {
     //probando esta linea
     //por aca creo que hay que cambiar el http://localhost:3000 con el nuevo path despues del deploy 
 
-    console.log(product)
     await product.save();
     res.json({nombre: product.nombre})
     //res.redirect('/');  
@@ -124,12 +123,15 @@ router.get('/product/:id', async (req, res) => {
     
 
 router.get('/product/:id/delete', async (req, res) => {
-    res.send('eliminar productos')
-   /*  const { id } = req.params;
-    const productDeleted = await Product.findByIdAndDelete(id);
-    //averigar lo que hace esta linea de abajo
-    await unlink(path.resolve('./src/public' + productDeleted.path));
-    res.redirect('/') */;
+    try {
+        const { id } = req.params;
+        const productDeleted = await Product.findByIdAndDelete(id);
+        //averigar lo que hace esta linea de abajo
+        //await unlink(path.resolve('./src/public' + productDeleted.path));
+        //res.redirect('/')
+    } catch (error) {
+        res.status(500).send("error borrando producto")
+    } 
 });
 
 module.exports = router;
