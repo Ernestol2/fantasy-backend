@@ -102,7 +102,7 @@ router.post('/productonuevo', async (req, res) => {
     product.nombre = req.body.nombre;
     product.descripcion = req.body.descripcion;
     product.precio = req.body.precio;
-    product.path = 'https://fantasys-esther.onrender.com/img/uploads/' + req.file.filename;
+    product.path = 'https://fantasy-backend-t2q2-dev.fl0.io/img/uploads/' + req.file.filename;
     //probando esta linea
     //por aca creo que hay que cambiar el http://localhost:3000 con el nuevo path despues del deploy 
 
